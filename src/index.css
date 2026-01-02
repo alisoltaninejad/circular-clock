@@ -1,0 +1,137 @@
+/* -------------------------------------------------------
+   1️⃣ GOOGLE FONTS
+   فونت‌ها باید قبل از Tailwind لود بشن
+------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap");
+
+/* -------------------------------------------------------
+   2️⃣ TAILWIND CORE
+------------------------------------------------------- */
+@import "tailwindcss";
+
+/* -------------------------------------------------------
+   3️⃣ THEME TOKENS (Design System)
+   جایگزین :root در Tailwind v4
+------------------------------------------------------- */
+@theme {
+  /* Fonts */
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-aleo: "Aleo", serif;
+
+  /* Colors */
+  --color-bg: #000000;
+  --color-fg: #e5e7eb;
+  --color-primary: #22d3ee;
+  --color-muted: #6b7280;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* Shadow (Neon style) */
+  --shadow-neon: 0 0 8px #22d3ee, 0 0 20px #22d3ee;
+}
+
+/* -------------------------------------------------------
+   4️⃣ DARK THEME OVERRIDES
+   Tailwind v4 native dark theme
+------------------------------------------------------- */
+@theme dark {
+  --color-bg: #020617;
+  --color-fg: #f8fafc;
+  --color-primary: #38bdf8;
+}
+
+/* -------------------------------------------------------
+   5️⃣ BASE LAYER
+   استایل‌های پایه‌ی کل پروژه
+------------------------------------------------------- */
+@layer base {
+  html {
+    color-scheme: dark light;
+  }
+
+  body {
+    font-family: var(--font-orbitron);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-orbitron);
+    letter-spacing: 0.04em;
+  }
+
+  p {
+    font-family: var(--font-aleo);
+  }
+}
+
+/* -------------------------------------------------------
+   6️⃣ COMPONENTS
+   دکمه، کارت، divider و...
+------------------------------------------------------- */
+@layer components {
+
+  /* Button */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 font-semibold transition;
+    border-radius: var(--radius-md);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: black;
+    box-shadow: var(--shadow-neon);
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+  }
+
+  /* Card */
+  .card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+  }
+
+  /* Neon Divider */
+  .divider-neon {
+   @apply  border-0  border-t-4 border-dashed  border-cyan-400 shadow-neon my-6
+  }
+}
+
+/* -------------------------------------------------------
+   7️⃣ UTILITIES
+   کلاس‌های ریز و reusable
+------------------------------------------------------- */
+@layer utilities {
+
+  /* Fonts */
+  .font-orbitron {
+    font-family: var(--font-orbitron);
+  }
+
+  .font-aleo {
+    font-family: var(--font-aleo);
+  }
+
+  /* Text glow */
+  .text-neon {
+    color: var(--color-primary);
+    text-shadow: 0 0 6px currentColor, 0 0 18px currentColor;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(94, 94, 94, 0.207);
+    backdrop-filter: blur(12px);
+    border-radius: 6px;
+    padding: 3px;
+    margin: 1px;
+  }
+}
