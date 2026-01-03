@@ -21,7 +21,7 @@ const TimerPage: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full bg-black flex flex-col items-center justify-items-stretch ">
-      <h1 className="text-7xl pl-4 text-amber-600 tracking-widest  drop-shadow-[0_0_4px_#ee6612]">
+      <h1 className="text-7xl pt-3 pl-4 text-amber-600 tracking-widest  drop-shadow-[0_0_4px_#ee6612]">
         circular-clock
       </h1>
       <hr className="divider-neon " />
