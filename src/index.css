@@ -103,7 +103,7 @@
 
   /* Neon Divider */
   .divider-neon {
-    @apply w-full  h-0 border-t-2 border-dashed border-cyan-300 my-8;
+    @apply w-full h-0 border-t-2 border-dashed border-cyan-300 my-8;
     box-shadow:
       0 0 5px #0ff,
       0 0 10px #0ff,
@@ -140,5 +140,29 @@
     border-radius: 6px;
     padding: 3px;
     margin: 1px;
+  }
+
+  @keyframes neonPulse {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 10px rgba(30, 64, 175, 0.6));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 22px rgba(4, 75, 187, 0.8));
+    }
+  }
+
+  .animate-neon-pulse {
+    animation: neonPulse 3s infinite ease-in-out;
+  }
+
+  .group:hover .animate-neon-pulse {
+    animation: neonPulse 1.5s infinite ease-in-out;
+  }
+
+  .hover-pulse-fast:hover {
+    animation-duration: 1.5s;
   }
 }
