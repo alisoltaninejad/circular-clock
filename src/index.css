@@ -59,7 +59,9 @@
     line-height: 1.6;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--font-orbitron);
     letter-spacing: 0.04em;
   }
@@ -96,12 +98,17 @@
     background-color: rgba(255, 255, 255, 0.03);
     border-radius: var(--radius-lg);
     padding: 1.5rem;
-    box-shadow: 0 0 0 1px rgba(255,255,255,0.05);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05);
   }
 
   /* Neon Divider */
   .divider-neon {
-   @apply  border-0  border-t-4 border-dashed  border-cyan-400 shadow-neon my-6
+    @apply w-full  h-0 border-t-2 border-dashed border-cyan-300 my-8;
+    box-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 15px #0ff,
+      0 0 20px #0ff;
   }
 }
 
