@@ -10,7 +10,9 @@ const TimerPage: React.FC = () => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-   
+    // برای حذف تایمر عنگام unmount
+    //جهت مدیریت منابع و هدر رفتن حافظه تایمر باید یک طول عمر داشته باشد تا تایمر های متعدد ساخته نشوند
+    return () => clearInterval(timer);
   }, []);
 
   const hours = time.getHours();
