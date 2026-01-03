@@ -72,7 +72,7 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
             }}
           />
 
-          <text  x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize={size * 0.25} fill={color} > {value} </text>
+          <text  x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize={size * 0.25} fill={color} >{value < 10 ? '0' + value : value} </text>
         </svg>
 
         <span
