@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 export default function footer() {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div
-      className="group fixed -bottom-4 left-1/2 -translate-x-1/2 w-96 z-50 cursor-pointer 
+      onClick={() => setIsVisible((prevState) => !prevState)}
+      className="group fixed bottom-0 left-1/2 -translate-x-1/2 w-96 z-50 cursor-pointer text-center
                 transition-all duration-500 ease-in-out 
                 animate-neon-pulse hover-pulse-fast hover:-translate-y-2">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-10 bg-black rounded-full flex items-center justify-center border-t border-blue-900/50 transition-colors duration-500 group-hover:border-blue-400/50">
