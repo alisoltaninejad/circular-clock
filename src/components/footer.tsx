@@ -1,17 +1,30 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Avatar from "../assets/AliSN.jpg";
+import Socials from "./socials";
 export default function footer() {
-  const titleCase = (str:string) => str.replace(/\b\w/g, (char) => char.toUpperCase());
+  const titleCase = (str: string) =>
+    str.replace(/\b\w/g, (char) => char.toUpperCase());
 
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div
-      className="group fixed bottom-0 left-1/2 -translate-x-1/2 w-130 h-130 z-50 cursor-pointer 
-                transition-all duration-500 ease-in-out 
-                animate-neon-pulse hover-pulse-fast hover:-translate-y-2">
+      onClick={() => setIsVisible((prevState) => !prevState)}
+      className={`group fixed ${
+        isVisible ? "bottom-6 hover:translate-y-2" : "-bottom-118 hover:-translate-y-2"
+      } w-130 h-130 left-1/2 -translate-x-1/2  z-50 cursor-pointer 
+                transition-all duration-1000 ease-in-out 
+                animate-neon-pulse hover-pulse-fast  `}>
       <div className="header">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-10 bg-black rounded-full flex items-center justify-center border-t border-blue-900/50 transition-colors duration-500 group-hover:border-blue-400/50">
+        <div
+        
+          className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-10 bg-black rounded-full flex items-center justify-center border-t border-blue-900/50 transition-colors duration-500 group-hover:border-blue-400/50">
           <svg
-            className="relative z-50 transition-transform duration-500 group-hover:-translate-y-1.5"
+            className={`relative z-50 transition-transform duration-500
+              ${
+                isVisible
+                  ? " group-hover:translate-y-1 rotate-180"
+                  : "group-hover:-translate-y-1"
+              }`}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -48,9 +61,11 @@ export default function footer() {
         />
 
         <p className="pt-6 max-w-68 text-center mx-auto font-aleo text-neon">
-          {titleCase("i’m ali soltani nejad — a patient front-end developer")}
+          {titleCase(
+            "i’m ali soltani nejad — a patient creative front-end developer"
+          )}
         </p>
-
+        <Socials/>
       </div>
     </div>
   );
