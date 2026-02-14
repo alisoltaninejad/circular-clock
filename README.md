@@ -4,6 +4,7 @@
 A neon-style animated clock built with `React`, `Vite`, `TypeScript`, and `Tailwind CSS`.  
 Time is shown using **rotating circular borders** for seconds, minutes, and hours, with numbers displayed at the center.  
 An interactive info card slides in and out from the bottom.
+[![پیش‌نمایش پروژه](public/preview1.png)](public/preview1.png)  
 
 ## ✨ Features
 
